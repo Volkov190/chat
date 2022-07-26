@@ -1,0 +1,87 @@
+$button-size: 58px;
+$button-color: rgba(8, 72, 192, 1);
+
+.main {
+  &__button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: $button-size;
+    height: $button-size;
+    border-radius: 29px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    background-color: $button-color;
+    animation-name: button-load;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+
+    @keyframes button-load {
+      0% {
+        opacity: 0;
+        margin-bottom: -$button-size;
+      }
+      100% {
+        opacity: 1;
+        margin-bottom: 0px;
+      }
+    }
+
+    &_icon {
+      margin: 0 auto;
+
+      &-chat {
+        background-image: url("./img/chat.svg");
+        width: 24px;
+        height: 30px;
+        margin-top: 16px;
+        animation-name: chat-icon-load;
+        animation-duration: 0.5s;
+
+        @keyframes chat-icon-load {
+          0% {
+            margin-top: 60px;
+          }
+          100% {
+          }
+        }
+      }
+
+      &-close {
+        background-image: url("./img/hide.svg");
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        margin-top: 20px;
+        animation-name: close-icon-load;
+        animation-fill-mode: none;
+        animation-duration: 1s;
+
+        @keyframes close-icon-load {
+          0% {
+            transform: rotate(90deg);
+            opacity: 0;
+          }
+          100% {
+          }
+        }
+
+        &-hide {
+          animation-name: close-icon-hide;
+          animation-fill-mode: forwards;
+          animation-duration: 1s;
+          @keyframes close-icon-hide {
+            0% {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(90deg);
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
