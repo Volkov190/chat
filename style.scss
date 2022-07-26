@@ -84,4 +84,48 @@ $button-color: rgba(8, 72, 192, 1);
       }
     }
   }
+
+  &__chat {
+    border: 1px solid aqua;
+    width: 380px;
+    max-height: 622px;
+    height: 100vh;
+    position: fixed;
+    bottom: 94px;
+    right: 15px;
+
+    &_hidden {
+      display: none;
+    }
+  }
+}
+
+.chat {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__input {
+    height: 48px;
+    // max-height: 120px;
+    width: 100%;
+    border: 1px solid aqua;
+  }
+}
+
+.input {
+  display: flex;
+  // align-items: flex-end;
+
+  &__smile {
+    width: 36px;
+    height: 48px;
+    background: url(./img/smile.svg) no-repeat center center;
+  }
+
+  &__textarea {
+    padding-top: 15px;
+    resize: none;
+  }
 }

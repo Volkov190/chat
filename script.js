@@ -1,5 +1,6 @@
 const button = document.querySelector(".main__button");
 const buttonIcon = document.querySelector(".main__button_icon");
+const chat = document.querySelector(".main__chat");
 let isChatHidden = true;
 
 setTimeout(() => {
@@ -16,5 +17,8 @@ button.addEventListener("click", () => {
       buttonIcon.classList.remove("main__button_icon-close");
     }, 1000);
   }
+
+  chat.classList.toggle("main__chat_hidden");
+
   isChatHidden = !isChatHidden;
 });
