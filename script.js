@@ -14,13 +14,7 @@ const buttonIdleTextRight = document.querySelector(
 );
 const buttonIdleCheck = document.querySelector(".button__idle-check_hidden");
 
-function rerender(elem) {
-  const elemCopy = elem.cloneNode(true);
-  elem.after(elemCopy);
-  elem.remove();
-}
-
-idle = () => {
+const idle = () => {
   if (!isChatHidden) return;
 
   buttonIdleTextLeft.classList.add("button__idle-text-left");
