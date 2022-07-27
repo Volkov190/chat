@@ -157,6 +157,12 @@ $button-color: rgba(8, 72, 192, 1);
       line-height: 45px;
       color: #0848c0;
       text-align: center;
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: rgba(8, 72, 192, 0.12);;
+      }
     }
   }
 
