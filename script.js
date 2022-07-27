@@ -6,6 +6,48 @@ const inputTextArea = document.querySelector(".input__textarea");
 const inputSend = document.querySelector(".input__send");
 const inputSmile = document.querySelector(".input__smile");
 const chatPopup = document.querySelector(".chat__popup");
+const buttonIdleTextLeft = document.querySelector(
+  ".button__idle-text-left_hidden"
+);
+const buttonIdleTextRight = document.querySelector(
+  ".button__idle-text-right_hidden"
+);
+const buttonIdleCheck = document.querySelector(".button__idle-check_hidden");
+
+function rerender(elem) {
+  const elemCopy = elem.cloneNode(true);
+  elem.after(elemCopy);
+  elem.remove();
+}
+
+idle = () => {
+  if (!isChatHidden) return;
+
+  buttonIdleTextLeft.classList.add("button__idle-text-left");
+  setTimeout(() => {
+    buttonIcon.classList.add("main__button_icon-chat_hidden");
+    setTimeout(() => {
+      buttonIcon.classList.add("main__button_icon-chat_rotated");
+      buttonIdleTextRight.classList.add("button__idle-text-right");
+      setTimeout(() => {
+        buttonIcon.classList.remove("main__button_icon-chat_hidden");
+        setTimeout(() => {
+          buttonIdleCheck.classList.remove("button__idle-check_hidden");
+          setTimeout(() => {
+            buttonIdleCheck.classList.add("button__idle-check_hidden");
+            buttonIdleTextLeft.classList.remove("button__idle-text-left");
+            buttonIdleTextRight.classList.remove("button__idle-text-right");
+            setTimeout(() => {
+              buttonIcon.classList.remove("main__button_icon-chat_rotated");
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 2000);
+    }, 1000);
+  }, 800);
+};
+
+setTimeout(idle, 20000);
 
 window.addEventListener("click", (event) => {
   if (
@@ -24,6 +66,12 @@ setTimeout(() => {
 }, 1000);
 
 button.addEventListener("click", () => {
+  buttonIdleCheck.classList.add("button__idle-check_hidden");
+  buttonIdleTextLeft.classList.remove("button__idle-text-left");
+  buttonIdleTextRight.classList.remove("button__idle-text-right");
+  buttonIcon.classList.remove("main__button_icon-chat_hidden");
+  buttonIcon.classList.remove("main__button_icon-chat_rotated");
+
   if (isChatHidden) {
     buttonIcon.classList.add("main__button_icon-close");
   } else {
@@ -32,6 +80,7 @@ button.addEventListener("click", () => {
       buttonIcon.classList.remove("main__button_icon-close-hide");
       buttonIcon.classList.remove("main__button_icon-close");
     }, 1000);
+    setTimeout(idle, 20000);
   }
 
   chat.classList.toggle("main__chat_hidden");
