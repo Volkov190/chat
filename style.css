@@ -157,6 +157,19 @@
   margin-top: 42px;
   margin: 16px;
 }
+.chat__popup {
+  background: #ffffff;
+  box-shadow: 0px 0px 1px 1px #d6dade;
+  border-radius: 2px;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  left: 16px;
+  bottom: 70px;
+}
+.chat__popup.chat__popup_hidden {
+  display: none;
+}
 
 .message {
   background: #f3f5f7;
@@ -200,6 +213,7 @@
   width: 36px;
   height: 48px;
   background: url(./img/smile.svg) no-repeat center center;
+  cursor: pointer;
 }
 .input__textarea {
   padding-top: 15px;
@@ -221,7 +235,31 @@
   width: 36px;
   height: 48px;
   background: url(./img/send.svg) no-repeat center;
+  cursor: pointer;
 }
 .input__send_hidden {
   display: none;
+}
+
+.popup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow-y: scroll;
+  padding: 10px;
+}
+.popup::-webkit-scrollbar {
+  width: 3px;
+}
+.popup::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+}
+.popup__smile {
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+.popup__smile:hover {
+  background-color: #f3f5f7;
 }/*# sourceMappingURL=style.css.map */

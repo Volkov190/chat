@@ -4,6 +4,20 @@ const chat = document.querySelector(".main__chat");
 let isChatHidden = true;
 const inputTextArea = document.querySelector(".input__textarea");
 const inputSend = document.querySelector(".input__send");
+const inputSmile = document.querySelector(".input__smile");
+const chatPopup = document.querySelector(".chat__popup");
+
+window.addEventListener("click", (event) => {
+  if (
+    !(
+      event.target.classList.contains("chat__popup") ||
+      event.target.classList.contains("popup__smile") ||
+      event.target.classList.contains("input__smile")
+    )
+  ) {
+    chatPopup.classList.add("chat__popup_hidden");
+  }
+});
 
 setTimeout(() => {
   buttonIcon.classList.add("main__button_icon-chat");
@@ -57,7 +71,11 @@ inputTextArea.addEventListener("input", (ev) => {
       }
     }
   }
-  
+
   inputTextArea.rows += diff;
   inputTextArea1.remove();
+});
+
+inputSmile.addEventListener("click", () => {
+  chatPopup.classList.toggle("chat__popup_hidden");
 });
