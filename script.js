@@ -82,7 +82,7 @@ button.addEventListener("click", () => {
   isChatHidden = !isChatHidden;
 });
 
-inputTextArea.addEventListener("input", (ev) => {
+inputTextArea.addEventListener("input", () => {
   if (inputTextArea.value.length > 0) {
     inputSend.classList.remove("input__send_hidden");
   } else {
@@ -92,30 +92,16 @@ inputTextArea.addEventListener("input", (ev) => {
   const inputTextArea1 = inputTextArea.cloneNode(true);
   inputTextArea1.style.opacity = "0";
   inputTextArea.after(inputTextArea1);
-  let diff = 0;
-  if (
+
+  inputTextArea1.rows = 1;
+  while (
     inputTextArea1.scrollHeight > inputTextArea1.clientHeight &&
     inputTextArea1.rows < 5
   ) {
-    diff = 1;
-  } else if (inputTextArea1.rows > 1) {
-    while (
-      !(inputTextArea1.scrollHeight > inputTextArea1.clientHeight) &&
-      inputTextArea1.rows > 2
-    ) {
-      inputTextArea1.rows -= 1;
-      --diff;
-    }
-    if (inputTextArea1.rows === 2) {
-      inputTextArea1.rows -= 1;
-      --diff;
-      if (inputTextArea1.scrollHeight > inputTextArea1.clientHeight) {
-        ++diff;
-      }
-    }
+    ++inputTextArea1.rows;
   }
 
-  inputTextArea.rows += diff;
+  inputTextArea.rows = inputTextArea1.rows;
   inputTextArea1.remove();
 });
 
