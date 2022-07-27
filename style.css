@@ -92,8 +92,14 @@
   color: #333333;
 }
 .chat__messages {
-  overflow-y: scroll;
   padding: 16px;
+  overflow: auto;
+}
+.chat__messages::-webkit-scrollbar {
+  width: 8px;
+}
+.chat__messages::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
 }
 .chat__title {
   font-family: "Lato";
