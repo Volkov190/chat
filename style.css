@@ -1,3 +1,9 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .main__button {
   position: fixed;
   bottom: 15px;
@@ -11,6 +17,13 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
   cursor: pointer;
+}
+@media (max-width: 410px) {
+  .main__button {
+    top: 15px;
+    background: rgba(51, 51, 51, 0.4);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  }
 }
 @keyframes button-load {
   0% {
@@ -72,20 +85,30 @@
 .main__chat {
   width: 380px;
   max-height: 622px;
-  height: 100vh;
+  height: 80vh;
   position: fixed;
   bottom: 94px;
   right: 15px;
-}
-.main__chat.main__chat_hidden {
-  display: none;
-}
-
-.chat {
   background: #ffffff;
   box-shadow: 0px 8px 16px rgba(51, 51, 51, 0.2);
   border-top: 4px solid #0848c0;
   border-radius: 4px;
+}
+.main__chat.main__chat_hidden {
+  display: none;
+}
+@media (max-width: 410px) {
+  .main__chat {
+    width: 100%;
+    position: static;
+    border: none;
+    box-shadow: none;
+    height: 100vh;
+    max-height: none;
+  }
+}
+
+.chat {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -100,6 +123,11 @@
 }
 .chat__messages::-webkit-scrollbar-thumb {
   background: #cfcfcf;
+}
+@media (max-width: 410px) {
+  .chat__messages::-webkit-scrollbar {
+    width: 0;
+  }
 }
 .chat__title {
   font-family: "Lato";
@@ -144,6 +172,11 @@
 .chat__message {
   width: 236px;
   margin-bottom: 16px;
+}
+@media (max-width: 410px) {
+  .chat__message {
+    width: 80%;
+  }
 }
 .chat__message.chat__message_client {
   margin-left: auto;
@@ -197,12 +230,14 @@
   color: #0000ee;
 }
 .message__date {
+  width: 30px;
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: #9ea4ac;
+  align-items: center;
 }
 
 .input {
