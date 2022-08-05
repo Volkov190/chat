@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Чатик</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main__button button">
+        <div class="main__button_icon"></div>
+        <div class="button__idle">
+          <div class="idle__message"></div>
+          <div class="idle__check"></div>
+          <div class="idle__text-left"></div>
+          <div class="idle__text-right"></div>
+          <div class="idle__helper">
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="main__chat chat main__chat_hidden">
+        <div class="chat__messages">
+            <h1 class="chat__title">Здравствуйте &#128075;</h1>
+            <p class="chat__text">Сотрудники службы поддержки mos.ru ответят на вопросы о работе портала, окажут помощь в получении госуслуг и поиске информации</p>
+            <ul class="chat__list">
+                <li>Центры госуслуг "Мои документы"</li>
+                <li>Вопросы по личному кабинету</li>
+                <li>Молочная кухня</li>
+                <li>Карта Москвича</li>
+                <li>Найти ответ в базе знаний</li>
+            </ul>
+            <div class="chat__time-ago">Несколько часов назад</div>
+            <div class="message chat__message chat__message_operator">
+                <div class="message__text">
+                    <p class="message_text">Уточнить перечень предоставляемых услуг и их наличие в центре госуслуг «Мои документы» можно по ссылке:</p>
+                    <p class="message_text"><span class="link">https://md.mos.ru/katalog-uslug/perechen-uslug</span></p>
+                    <p class="message_text">Узнать адреса центров госуслуг города Москвы:</p>
+                    <p class="message_text"><span class="link">https://md.mos.ru/find-your-dcp/structure</span></p>
+                </div>
+                <div class="message__date">01:46</div>
+            </div>
+            <div class="message chat__message chat__message_client">
+                <div class="message__text">
+                    <p class="message_text">Уточнить перечень предоставляемых услуг и их наличие в центре госуслуг «Мои документы» можно по ссылке:</p>
+                    <p class="message_text"><span class="link">https://md.mos.ru/katalog-uslug/perechen-uslug</span></p>
+                    <p class="message_text">Узнать адреса центров госуслуг города Москвы:</p>
+                    <p class="message_text"><span class="link">https://md.mos.ru/find-your-dcp/structure</span></p>
+                </div>
+                <div class="message__date">01:46</div>
+            </div>
+        </div>
+        <div type="text" class="chat__input input">
+            <div class="input__smile"></div>
+        <textarea name="" cols="30" rows="1" class="input__textarea" placeholder="Введите сообщение..."></textarea>
+        <div class="input__send input__send_hidden"></div>
+      </div>
+      <div class="popup chat__popup chat__popup_hidden">
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+        <div class="popup__smile">&#128512;</div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
